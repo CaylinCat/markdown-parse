@@ -17,8 +17,8 @@ public class MarkdownParse {
             if (nextOpenBracket < 0) {
                 break;
             }
-            int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-            int openParen = markdown.indexOf("(", nextCloseBracket);
+            int nextCloseBracket = markdown.indexOf("](", nextOpenBracket);
+            int openParen = markdown.indexOf("](", nextCloseBracket) + 1;
             int closeParen = markdown.indexOf(")", openParen);
             System.out.println("close param: " + closeParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
